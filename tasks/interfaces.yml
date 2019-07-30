@@ -5,7 +5,7 @@
     src: interfaces.j2
     dest: /etc/network/interfaces
     backup: yes
-  notify: 
+  notify:
     - reload interfaces
     - reload frr.service
   tags:
