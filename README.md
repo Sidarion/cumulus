@@ -31,5 +31,5 @@ The following configurations are possible with this role:
 
 Handlers are in place to restart services when necessary.
 
-##Author Information
+## Author Information
 This role was created by [Sidarion](https://github.com/Sidarion).
