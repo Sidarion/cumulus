@@ -23,9 +23,9 @@ auto eth0
 iface eth0 inet static
     address {{ iface.address }}
 {% if securityblock == securityblock1 %}
-    gateway {{ oob_gateway_int }}
+    gateway {{ oob_gateway_sb1 }}
 {% elif securityblock == securityblock2 %}
-    gateway {{ oob_gateway_dmz }}
+    gateway {{ oob_gateway_sb2 }}
 {% endif %}
 {% endfor %}
 
