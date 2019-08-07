@@ -22,9 +22,9 @@ iface lo inet loopback
 auto eth0
 iface eth0 inet static
     address {{ iface.address }}
-{% if securityblock == 'INT' %}
+{% if securityblock == securityblock1 %}
     gateway {{ oob_gateway_int }}
-{% elif securityblock == 'DMZ' %}
+{% elif securityblock == securityblock2 %}
     gateway {{ oob_gateway_dmz }}
 {% endif %}
 {% endfor %}
@@ -183,7 +183,7 @@ iface {{ iface.name }}
 {% if iface.address != None %}
     address {{ iface.address }}
 {% endif %}
-{% if securityblock == 'INT' and iface.anycast_ip is defined and iface.anycast_ip != None %}
+{% if securityblock == securityblock1 and iface.anycast_ip is defined and iface.anycast_ip != None %}
 {% set mac = '000' + iface.vid | string  %}
 {% set mac = mac[-4:] %}
     address-virtual 44:39:39:ff:{{ mac[:-2] }}:{{ mac[-2:] }} {{ iface.anycast_ip }}
