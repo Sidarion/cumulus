@@ -4,9 +4,6 @@ auto lo
 iface lo inet loopback
 {% if loopback_ip is defined %}
     address {{ loopback_ip }}
-{% if cluster_role == 'master' or cluster_role == 'slave' %}
-    vxrd-src-ip {{ loopback_ip [:-3] }}
-{% endif %}
 {% endif %}
 {% if iface.description != '' %}
     alias {{ iface.description }}
