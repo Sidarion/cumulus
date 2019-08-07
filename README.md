@@ -31,5 +31,8 @@ The following configurations are possible with this role:
 
 Handlers are in place to restart services when necessary.
 
+## License
+GPL-3.0
+
 ## Author Information
 This role was created by [Sidarion](https://github.com/Sidarion).
